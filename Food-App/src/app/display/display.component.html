@@ -1,0 +1,194 @@
+<div class="bg">
+<div class="header">  
+  <div class="nav">
+    <div class="nav">
+      <!-- <marquee behavior="scroll" direction=""> -->
+       <a [routerLink]="'/home'">
+          <img src="../../assets/Logo/logo1-removebg.png" width="85px" height="75px">
+       </a>
+      <!-- </marquee> -->
+      <h1 class="brand">Bite Bliss</h1>
+    </div>
+    <div class="navoptions">
+      <ul>
+        <li><a routerLink="/help"><mat-icon>help</mat-icon>Help</a></li>
+
+        <div id="button">
+          <button mat-button *ngIf="authService.isLoggedStatus==false"><a routerLink="../login" ><mat-icon>account_circle</mat-icon>Login</a></button>
+         
+      </div>
+  
+        <button id="profile" mat-button [matMenuTriggerFor]="profile"
+          *ngIf="authService.isLoggedStatus" (click)="toggleArrow()">{{name}}</button>
+          <a class="arrowicon"   *ngIf="authService.isLoggedStatus"><mat-icon > {{ isArrowDown ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon></a>
+
+      <mat-button-toggle-group id="category" color="accent" name="favoriteColor" class="menu">
+          <mat-menu #profile="matMenu" class="matMenu" >
+                <button mat-menu-item routerLink="/favorite"><mat-icon>favorite</mat-icon>Favorite</button>
+                <button mat-menu-item routerLink="../cart"><mat-icon>shopping_cart</mat-icon>Cart</button>
+                <button mat-menu-item routerLink="/display">Add Restaurant</button>
+                <button mat-menu-item (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon>exit_to_app</mat-icon>Logout</button>
+          </mat-menu>
+
+      </mat-button-toggle-group> 
+      </ul>
+    </div>
+  </div>
+  </div> 
+<!-- restaurant-form.component.html -->
+<div class="container">
+  <h2>Restaurant Details</h2>
+  <form >
+    <div class="form-group">
+      <label for="restaurantName">Restaurant Name</label>
+      <input type="text" class="form-control" id="restaurantName" name="restaurantName" [(ngModel)]="restaurant.restaurantName" required pattern="[^\d]+" #restaurantName="ngModel">
+       <div *ngIf="restaurantName.invalid && (restaurantName.dirty || restaurantName.touched)" class=" alert-danger">
+        <div *ngIf="restaurantName.errors?.['required']">
+        Restaurant name is required.
+      </div>
+        <div *ngIf="restaurantName.errors?.['pattern']">
+        Restaurant name cannot contain numbers.
+      </div> 
+    </div>
+    </div>
+        
+      
+     <!-- <div class="form-group">
+      <label for="restaurantId">Restaurant ID</label>
+      <input type="number" class="form-control" id="restaurantId" name="restaurantId" [(ngModel)]="restaurant.restaurantId" readonly>
+    </div> -->
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="location" name="location" [(ngModel)]="restaurant.location"  required pattern="[^\d]+" #location="ngModel"  >
+     <div *ngIf="location.invalid && (location.dirty ||location.touched)" class=" alert-danger">
+        <div *ngIf="location.errors?.['required']">
+        location name is required.
+      </div>
+  <div *ngIf="location.errors?.['pattern']">
+       location name cannot contain numbers.
+      </div>
+  </div>
+    </div>
+    <div class="form-group">
+      <label for="cuisine">Cuisine</label>
+      <input type="text" class="form-control" id="cuisine" name="cuisine" [(ngModel)]="restaurant.cuisine"  required pattern="[^\d]+" #cuisine="ngModel">
+      <div *ngIf="cuisine.invalid && (cuisine.dirty ||cuisine.touched)" class=" alert-danger">
+        <div *ngIf="cuisine.errors?.['required']">
+        Cuisine name is required.
+      </div>
+      <!-- <div *ngIf="cuisine.errors.pattern"> -->
+        <div *ngIf="cuisine.errors?.['pattern']">
+      Cuisine name cannot contain numbers.
+      </div>
+    </div>
+
+
+
+
+
+
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" class="form-control" id="rating" name="rating" pattern="^(?:[0-9]|-[1-5])$" [(ngModel)]="restaurant.rating"required min="1" max="5" #rating="ngModel">
+      <div *ngIf="rating.invalid && (rating.dirty || rating.touched)" class=" alert-danger">
+        <div *ngIf="rating.errors?.['required']">
+          Rating is required.
+        </div>
+        <div *ngIf="rating.errors?.['min ']|| rating.errors?.['max'] ">
+          Rating must be between 1 and 5.
+        </div>
+        
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="area">Address Area</label>
+      <input type="text" class="form-control" id="area" name="area" [(ngModel)]="restaurant.address && restaurant.address.area"required pattern="[A-Za-z]*" #areaModel="ngModel">
+      <div *ngIf="areaModel.invalid && (areaModel.dirty || areaModel.touched)" class="alert-danger">
+        <div *ngIf="areaModel.errors?.['required']">Address Area is required.</div>
+        <div *ngIf="areaModel.errors?.['pattern']">Only characters are allowed in Address Area.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="state">Address State</label>
+      <input type="text" class="form-control" id="state" name="state" [(ngModel)]="restaurant.address && restaurant.address.state"  required pattern="[A-Za-z ]*" #stateModel="ngModel">
+      <div *ngIf="stateModel.invalid && (stateModel.dirty || stateModel.touched)" class="alert-danger">
+        <div *ngIf="stateModel.errors?.['required']">Address State is required.</div>
+        <div *ngIf="stateModel.errors?.['pattern']">Only characters are allowed in Address State.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="zipCode">Address Zip Code</label>
+      <input type="number" class="form-control" id="zipCode" name="zipCode" [(ngModel)]="restaurant.address && restaurant.address.zipCode"  required minlength="6"  maxlength="6" pattern="[0-9]*" #zipCodeModel="ngModel">
+      <div *ngIf="zipCodeModel.invalid && (zipCodeModel.dirty || zipCodeModel.touched)" class="alert-danger">
+        <div *ngIf="zipCodeModel.errors?.['required']">Address Zip Code is required.</div>
+        <div *ngIf="zipCodeModel.errors?.['minlength']">Address Zip Code must be 6 characters long.</div>
+        <div *ngIf="zipCodeModel.errors?.['maxlength']">Address Zip Code must be 6 characters long.</div>
+        <div *ngIf="zipCodeModel.errors?.['pattern']">Only numbers are allowed in Address Zip Code.</div>
+      </div>
+      </div>
+    <div class="form-group">
+      <label for="restaurantImage">Restaurant Image</label>
+      <br>
+      <p>* Restaurant Name and Restaurant Image File Name should Match and File should be JPG Format</p>
+      <br>
+     <input type="file" (change)="onFileSelected($event)" accept="image"  >
+      <button type="submit" (click)="onUpload()" id="upbtn"> Upload</button>
+    </div>
+    <div class="form-group">
+      <label for="dishList">Dishes</label>
+      <div *ngFor="let dish of restaurant.dishList; let i = index">
+        <div class="dish-item">
+          <input type="text" class="form-control" [(ngModel)]="dish.dishName" name="dishName{{i}}" placeholder="Dish Name">
+          <input type="text" class="form-control" [(ngModel)]="dish.dishType" name="dishType{{i}}" placeholder="Dish Type">
+          <input type="number" class="form-control" [(ngModel)]="dish.dishCost" pattern="^(?:[0-9]|-[1-5])$" name="dishCost{{i}}" placeholder="Dish Cost">
+          <div *ngIf="isDishInvalid(i)" class="alert alert-danger">
+            Dish Name, Dish Type, and Dish Cost are required.
+          </div>
+         
+
+          <label for="dishImage{{i}}">Dish Image</label> 
+          <p>* Dish Name and Dish Image File Name should Match and File should be JPG Format</p>
+           <input type="file" (change)="onFileSelected($event)" accept="image"  > 
+          <button type="submit" (click)="onUpload1()" > Upload</button>
+          <br>
+          <button type="button" class="btn btn-danger" id="removebtn" (click)="removeDish(i)">Remove</button>
+        </div>
+      </div>
+    </div> 
+     <button id="button"  type="button" class="btn btn-success" (click)="addDish()">Add Dish</button>
+    <button  id="button" type="submit"  class="btn btn-primary" (click)="submitRestaurant()">Submit</button> 
+  </form>
+</div>
+<footer>
+  <hr>
+  <div>
+    <h1 class="footername">Bite Bliss</h1>
+  </div>
+  <div class="footerinfo">
+    <div>
+      <ul class="footerul">
+        <li>Privacy</li>
+        <li>Security</li>
+        <li>Terms</li>
+        <li>SiteMap</li>
+      </ul>
+    </div>
+        <div class="links">
+          <p >Social Links</p>
+                <div class="footerlogo">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-facebook"></i>       
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+        </div>
+  </div>
+  <hr class="footerhr">
+
+  <div class="copyright">
+    <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © BiteBliss™ Ltd. All rights reserved.</p>
+  </div>
+</footer>
+</div>

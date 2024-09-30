@@ -1,0 +1,48 @@
+.flex{
+    display: flex;
+   
+}
+a{
+    margin-left: 1000px;
+}
+h1{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0px ;
+    background-color: black;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+mat-tab-group{
+    margin-top: -15px;
+    background-color: lightgray
+}
+.matcard{
+    width: 600px;
+  
+    /* display: inline-block; */
+    align-content: center;
+    margin: 10px 0px;
+    margin-left: 350px;
+    border: 1px solid lightgray;
+}
+.dishCard{
+    display: flex;
+ 
+}
+
+th{
+    width: 170px;
+}
+.dish{
+    width: 170px;
+}
+.dishid{
+    width: 100px;
+    padding-left: 20px;
+}
+.dishidd{
+    width: 100px;
+    padding-left: 50px;
+}

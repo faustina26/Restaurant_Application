@@ -1,0 +1,338 @@
+ul{
+    list-style-type: none;
+}
+.bg{
+    background-color: whitesmoke;
+}
+
+.header{
+    background-color: black; 
+color: white;
+height: 70px;
+
+}
+#button {
+    margin-top: 10px;
+    margin-right: 10px;
+   
+}
+.orderonline{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.navoptions{
+    height: 60px;
+}
+
+img{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+mat-icon{
+ padding-right:27px ;
+color: orange;
+
+}
+.titlediv{
+ 
+    line-height: 50px;
+    text-align: center;
+}
+
+.slogan{
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    font-size:30px;
+
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+   margin-top: 10px;
+   display: flex;
+   color: white;
+    
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    
+    
+}
+ul li{
+    padding: 10px 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.img{
+    padding-top: 50px;
+}
+
+.chip{
+   margin-left: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25px;
+    width: 47px;
+    background-color:darkgreen;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+.logo{
+margin-top: -10px;
+}
+span{
+    font-size: medium;
+    font-weight: 550;
+    color: white;
+}
+i{ 
+    font-size: 10px;
+    padding-left: 3px;
+    margin-right: 2px;
+}
+.img{
+    display: flex;
+
+}
+.restimg{
+    border-radius: 10px;
+}
+/* restinfo */
+#restinfo{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 20px;
+    justify-content: space-around;
+}
+#name{
+    font-size: 27px;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.rating{
+    padding-left:10px;
+    padding-top: 2px;
+    line-height: 5px;
+}
+.rating p{
+    letter-spacing: 1px;
+    font-size: small;
+}
+.ratingno{
+    font-weight: 600;
+}
+.ratinginfo{
+    text-decoration:underline
+}
+
+.cuisine{
+    padding-top: 50px;
+    padding-left: 20px;
+    font-size: 17px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.location{
+    
+    padding-left: 20px;
+    font-size: 17px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.openings{
+    padding-left: 20px;
+    display: flex;
+    font-size: 17px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.openingsinfo{
+    color: orange;
+}
+.info{
+    color: black;
+    padding-left: 5px;
+    padding-top: 2px;
+    font-size: 17px;
+}
+/* ----------------------------------
+ */
+ 
+ .dish{
+    display: flex;
+    border-bottom:1px solid lightgrey;
+   
+ }
+ .dish img{
+    padding: 20px 0px;
+ }
+ .dishinfo{
+    padding: 25px 30px;
+ }
+ .dishname{
+    font-size: 25px;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+ }
+ .dishtype{
+    font-size: 20px;
+    text-transform: capitalize;
+   
+    padding-bottom: 10px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ }
+ .dishcost{
+    font-size: 18px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  
+ }
+ .offer{
+    padding-left: 5px;
+    color: orange;
+    font-size: 18px;
+    
+ }
+ .addbtn{
+    margin-top: -10px;
+    margin-left: 35px;
+  
+ } 
+ .like{
+    position: absolute;
+    margin-left: 900px;
+    width: 150px;
+    margin-top: 20px;
+   
+    
+ }
+
+
+/* --------------------------------------- */
+footer{
+    background-color: black;
+    padding-left: 20px;
+    color: white;
+    margin-top: -20px;
+}
+.footername{
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 2px;
+}
+.footerul{
+    padding:0%;
+    margin: 0%;
+}
+.footerul li{
+    padding: 10px 20px;
+    font-size: medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.footerinfo{
+    display: flex;
+}
+.links{
+     margin-left: 600px;
+}
+.links p{
+  
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.footerlogo i{
+    font-size: 13px;
+ padding: 0px 5px;
+}
+.footerhr{
+    background-color: white;
+    margin-left:-20px ;
+}
+.copyright p{
+    font-size: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+.brand{
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 3px;
+     font-weight: 400;
+     padding-top: 20px;
+   
+}
+
+
+
+
+/* -------------------------- */
+
+#profile{
+    color: white;
+    font-family: "Madimi One", sans-serif;
+    font-weight: lighter;
+    padding:30px 30px 30px 30px;
+margin-top: 3px;
+    font-size:20px;
+
+}
+.arrowicon{
+   margin-top: 17px;
+   margin-left: -23px;
+}
+
+
+/* ------------------ */
+.favorite-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: grey;
+    margin-left: 55px;
+    margin-bottom: 60px;
+
+  }
+  .favorite-btn:focus {
+    outline: none; /* Remove the default focus outline */
+}
+  .favorite-btn i{
+    font-size: large;
+  }
+  
+  .favorite-btn.red {
+    background-color: transparent;
+    border: none;
+    color: red;
+  }
+  

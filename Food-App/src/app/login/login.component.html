@@ -1,0 +1,50 @@
+<div class="bg">
+  
+  <div class="header">  
+    <div class="nav">
+       <a routerLink="../home">
+         <img  src="../../assets/Logo/logo1-removebg.png" width="80px" height="80px"></a>
+          <h1 class="brand">Bite Bliss</h1>
+      
+    </div>
+    </div>
+    <div class="login">
+ 
+      <h1><strong>LOG IN</strong> </h1>
+
+        <form class="example-form" #orderForm="ngForm">
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput required type="text" placeholder="email" name="userEmail" #userEmail="ngModel"  [(ngModel)]="user.userEmail" pattern="^[a-zA-Z_.+\-]+[a-zA-Z0-9_.+\-]+@[a-zA-Z\-]+\.[a-zA-Z\-.]+$" >
+                <mat-error *ngIf="userEmail?.touched&& userEmail.errors?.['required']">
+                    Email is requried
+               </mat-error>
+               <mat-error *ngIf="userEmail.errors?.['pattern']">
+                   Enter a valid Email ID
+               </mat-error>  
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput required type="password" placeholder="password"  name="userPassword"  #userPassword="ngModel" [(ngModel)]="user.userPassword" pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+                <mat-error *ngIf="userPassword?.touched&&userPassword?.errors?.['required']">
+                    Password is required
+                 </mat-error>
+                 <mat-error *ngIf="userPassword?.errors?.['pattern']">
+                    Enter a valid Password
+                 </mat-error>
+            </mat-form-field>
+
+            <br>
+
+            <button class="sub" mat-button color="primary" [disabled]="!orderForm.valid" (click)="validateUserCode()" >Submit</button>
+
+            <p> If you are a new user , Click here to  <a routerLink="/signup" >Register</a></p>
+        </form>
+    
+    </div>
+ 
+</div>

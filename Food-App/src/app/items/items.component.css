@@ -1,0 +1,77 @@
+
+a{
+    text-decoration: none;
+}
+
+img{
+    /* margin-left: -30px; */
+    border-radius: 10px;
+}
+.cuisine{
+    color: blue;
+}
+mat-card-title{
+    text-transform:uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.divcard{
+    width: 300px;
+    margin-top: -10px;
+    margin-left: -15px;
+}
+.innerdiv{
+    margin-left: 20px;
+}
+.matcard{
+    border-radius: 10px;
+    width: 320px;
+    padding: 5px;
+  display: inline-flex;
+  margin: 20px 50px 20px 50px;
+  line-height: 30px;
+  padding: 20px;
+ background-color: white;
+ text-align: center;
+
+}
+
+.chip{
+    margin-left: 115px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 18px;
+    width: 43px;
+    background-color:darkgreen;
+    display: flex;
+    justify-content: space-evenly;
+    /* border-top-left-radius: 5px; */
+    border-radius: 5px;
+}
+span{
+    font-size: small;
+    color: white;
+}
+i{ 
+    font-size: 8px;
+    padding-left: 3px;
+    margin-right: 2px;
+}
+
+.matcard:hover{
+    box-shadow: 0px 0px 10px 2px white;
+    transform: scale(0.9);
+
+}
+
+
+button{
+    margin-top: 20px;
+}

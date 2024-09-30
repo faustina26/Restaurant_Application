@@ -1,0 +1,63 @@
+<h1>ADMIN PAGE<a routerLink="/guard"><button>Logout</button></a></h1>
+
+<mat-tab-group>
+    <mat-tab label="REGISTERED RESTAURANTS">
+      
+      <div *ngFor="let r of regRest" class="matcard">
+        <div>
+          <p>Restaurant Id : {{r.restaurantId}}</p>
+          <p>Restaurant Name : {{r.restaurantName}}</p>
+          <p>Restaurant Location : {{r.location}}</p>
+          <p>Restaurant Cuisine : {{r.cuisine}}</p>
+         <p>Restaurant Area : {{r.address?.area}}</p>
+         <p>Restaurant State : {{r.address?.state}}</p>
+         <p>Restaurant ZipCode : {{r.address?.zipCode}}</p>
+        </div>
+       <!-- <h5>Dishes</h5> -->
+          <th class="dishid">Dish Id </th>
+          <th>Dish Name</th>
+          <th>Dish Type</th>
+          <th>Dish Cost</th>
+          <div *ngFor="let d of r.dishList" class="dishCard">
+           <p class="dishidd">{{d.dishId}}  </p>
+           <p class="dish">{{d.dishName}}</p>
+           <p class="dish">{{d.dishType}}</p>
+           <p class="dish">{{d.dishCost}}</p>
+           <p class="dish"> <i class="fas fa-trash-alt" (click)="deleteCart(d.dishName)"></i></p>
+          
+          </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="REQUESTED RESTAURANTS">
+      <div *ngFor="let r of reqRest" class="matcard">
+        <div>
+          <p>Restaurant Id : {{r.restaurantId}}</p>
+          <p>Restaurant Name : {{r.restaurantName}}</p>
+          <p>Restaurant Location : {{r.location}}</p>
+          <p>Restaurant Cuisine : {{r.cuisine}}</p>
+         <p>Restaurant Area : {{r.address?.area}}</p>
+         <p>Restaurant State : {{r.address?.state}}</p>
+         <p>Restaurant ZipCode : {{r.address?.zipCode}}</p>
+        </div>
+       <!-- <h5>Dishes</h5> -->
+          <th class="dishid">Dish Id </th>
+          <th>Dish Name</th>
+          <th>Dish Type</th>
+          <th>Dish Cost</th>
+          <div *ngFor="let d of r.dishList" class="dishCard">
+           <p class="dishidd">{{d.dishId}}  </p>
+           <p class="dish">{{d.dishName}}</p>
+           <p class="dish">{{d.dishType}}</p>
+           <p class="dish">{{d.dishCost}}</p>
+           
+          
+          </div>
+          <button>
+            <i class="fas fa-check" (click)="submitandDelete(r)"></i>
+            Approved
+          </button>
+          
+          <button ><i class="fas fa-trash-alt" (click)="deleteCart2(r.restaurantName?.toString())"></i>Declined</button>
+      </div>
+    </mat-tab>
+</mat-tab-group>

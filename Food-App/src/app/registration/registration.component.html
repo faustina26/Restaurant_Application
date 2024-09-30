@@ -1,0 +1,102 @@
+<!-- registration.component.html -->
+<div class="bg">
+  <div class="header">  
+    <div class="nav">
+     
+            <a routerLink="../home">
+                <img  src="../../assets/Logo/logo1-removebg.png" width="80px" height="80px"></a>
+                <h1 class="brand">Bite Bliss</h1>
+    </div>
+    </div>
+      <div class="registration_form">
+        <h2>CREATE ACCOUNT </h2>
+      
+        <form  [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          
+                <div class="name">
+                    
+                  <label for="userName">Name:</label>
+                  <input matInput type="text" id="userName"  formControlName="userName" class="form-control">
+                  <mat-error *ngIf="userName?.touched &&userName?.errors?.['required']">
+                    Name is required</mat-error>
+                  <mat-error *ngIf="userName?.errors?.['minlength']">
+                        Minimum 2 characters required</mat-error>
+                    <mat-error *ngIf="userName?.errors?.['pattern']">
+                        Name should not contain number
+                    </mat-error>
+                </div>
+              
+                <div class="email">
+                  <label for="userEmail">Email:</label>
+                  <input matInput type="email" id="userEmail" formControlName="userEmail" class="form-control">
+                  <mat-error *ngIf="userEmail?.touched&&userEmail?.errors?.['required']">
+                        User Email is required
+                  </mat-error>
+                  <mat-error *ngIf="userEmail?.errors?.['pattern']">
+                    Enter valid Email address
+                    </mat-error>
+                </div>
+       
+        
+          <div class="nameemail">
+              <div class="p1">
+                <label for="userPassword">Password:</label>
+                <input matInput size="23" type="password" id="userPassword" formControlName="userPassword" class="form-control">
+                <mat-error *ngIf="userPassword?.touched&&userPassword?.errors?.['required']">
+                  Password is required
+                </mat-error>
+                <mat-error *ngIf="userPassword?.errors?.['pattern']">
+                  Password should have minimum 8 letters, with atleast a special character,
+                  upper and lower case letters and a number
+                </mat-error>
+              </div>
+              <div class="p2">
+                  <label for="confirmPassword">Confirm Password:</label>
+                  <input matInput type="password" size="23" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+                  <mat-error *ngIf="confirmPassword?.touched&&confirmPassword?.errors?.['required']">
+                      Confirm Password is required
+                    </mat-error>
+                    <mat-error *ngIf="registrationForm?.errors?.['passwordMismatch']">
+                      Password and Confirm Password should match
+                    </mat-error>
+                </div>
+          </div>
+          <div class="phone">
+            <label for="phoneNumber">Phone Number:</label>
+            <input matInput  id="phoneNumber" formControlName="phoneNumber" class="form-control">
+            <mat-error *ngIf="phoneNumber?.touched&&phoneNumber?.errors?.['required']">
+              Phone Number is requried
+              </mat-error>
+            <mat-error *ngIf="phoneNumber?.errors?.['pattern']">
+              Valid phone number contains 10 digits starting with 7/8/9
+            </mat-error>
+          </div>
+        
+          <div formGroupName="address">
+              <div class="nameemail">
+              <div class="city">
+                <label for="city">City:</label>
+                <input matInput size="23" type="text" id="city" formControlName="city" class="form-control">
+                <mat-error *ngIf="city?.touched &&city?.errors?.['requried']">City required</mat-error>
+              </div>
+            
+              <div class="state">
+                <label for="state">State:</label>
+                <input matInput size="23" type="text" id="state" formControlName="state" class="form-control">
+                <mat-error *ngIf="state?.touched&&state?.errors?.['requried']">State required</mat-error>
+              </div>
+          </div>
+              <div class="pincode">
+                <label for="pincode">Pincode:</label>
+                <input matInput size="23" type="text" id="pincode" formControlName="pincode" class="form-control">
+                <mat-error *ngIf="pincode?.touched&&pincode?.errors?.['required']">Pincode required</mat-error>
+                <mat-error *ngIf="pincode?.errors?.['pattern']">
+                    Pincode should be 5 digit or 6 digit number
+                  </mat-error>
+              </div>
+          </div>
+        
+          <button id="sub" type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+</div>

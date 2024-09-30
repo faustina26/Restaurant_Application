@@ -1,0 +1,25 @@
+
+
+<mat-card class="matcard">
+    <a [routerLink]="['/restaurant', items?.restaurantId]" >
+   <div class="divcard"> 
+
+    <img src="../../assets/Restaurantimg/{{items?.restaurantName}}.jpg" alt="" width="310px" height="180px">
+    <div class="innerdiv">
+    <!-- <mat-card-header>{{items?.location}}</mat-card-header> -->
+    <mat-card-title>{{items?.restaurantName}}</mat-card-title>
+      <!-- <mat-card-content>{{items?.category}}</mat-card-content> -->
+      <mat-card-subtitle class="cuisine">{{items?.cuisine}}</mat-card-subtitle>
+      <mat-card-subtitle  class="address">{{items?.address?.area}},{{items?.address?.state}}</mat-card-subtitle>
+      <!-- <mat-card-subtitle  class="address"></mat-card-subtitle> -->
+     
+    <div class="chip"><span>{{items?.rating}}</span><i class="fa-solid fa-star" style="color:white;"></i></div>
+    </div> 
+  </div>
+</a>
+
+    </mat-card>
+ 
+    <!--  -->
+
+

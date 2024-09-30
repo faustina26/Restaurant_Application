@@ -1,0 +1,17 @@
+<div id="searchContainer" >
+ 
+  <div class="filterbox">
+    <select class="filter" [(ngModel)]="selectedLocation" (ngModelChange)="filterRestaurants()">
+      <option disabled selected value="">Location</option>
+      <option *ngFor="let p of options">{{p}}</option>
+    </select>
+  </div>
+    <div class="search">
+    
+        <input   type="text" size="65" class="ip"  [(ngModel)]="senote" placeholder=" Search for the restuarants and cuisines " />     
+      <button matTooltip="Search" type="button"  (click)="searchInput()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+  </div>

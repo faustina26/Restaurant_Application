@@ -1,0 +1,160 @@
+.header{
+    /* background-color: rgba(255, 255, 230, 0);  */
+    background-color: black;
+color: white;
+height: 70px;
+}
+
+img{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+#button {
+    margin-top: 10px;
+    margin-right: 10px;
+   
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+   height: 60px;
+}
+mat-icon{
+    color: black;
+    /* font-size: 10px; */
+ padding-right:27px ;
+color: orange;
+
+}
+.navoptions{
+    margin-top: 3px;
+}
+.titlediv{
+ 
+    line-height: 50px;
+    text-align: center;
+}
+
+.slogan{
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    font-size:30px;
+
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+   margin-top: 10px;
+   display: flex;
+   color: white;
+    
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    
+    
+}
+ul li{
+    padding: 10px 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* /* ------------------------------------------------------ */
+.help-support-container {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    color: white;
+    text-align: center;
+   
+}
+
+.help-support-heading {
+    font-size: 28px;
+}
+
+.help-support-text {
+    font-size: 18px;
+}
+
+.legal-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+
+}
+
+.legal-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.legal-details {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 10px;
+}
+
+.legal-summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.legal-text {
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.legal-text::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.legal-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.legal-text a:hover {
+    text-decoration: underline;
+}
+.bg{
+    background-image: url(../../assets/Logo/helpcomp.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+background-size: 100% 100%;
+padding-bottom: 10px;
+}
+/* --------------------------
+ */
+ 
+#profile{
+    color: white;
+    font-family: "Madimi One", sans-serif;
+    font-weight: lighter;
+    padding:30px 30px 30px 30px;
+margin-top: 3px;
+    font-size:20px;
+
+}
+.brand{
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 3px;
+     font-weight: 400;
+     padding-top: 20px;
+   
+}
+.arrowicon{
+   margin-top: 17px;
+   margin-left: -23px;
+}

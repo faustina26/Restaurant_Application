@@ -1,0 +1,143 @@
+<div class="header">  
+  <div class="nav">
+    <div class="nav">
+      <!-- <marquee behavior="scroll" direction=""> -->
+       <a [routerLink]="'/home'">
+          <img src="../../assets/Logo/logo1-removebg.png" width="85px" height="75px">
+       </a>
+      <!-- </marquee> -->
+      <h1 class="brand">Bite Bliss</h1>
+    </div>
+    <div class="navoptions">
+      <ul>
+        <li><a routerLink="/help"><mat-icon>help</mat-icon>Help</a></li>
+
+        <div id="button">
+          <button mat-button *ngIf="authService.isLoggedStatus==false"><a routerLink="../login" ><mat-icon>account_circle</mat-icon>Login</a></button>
+         
+      </div>
+  
+        <button id="profile" mat-button [matMenuTriggerFor]="profile"
+          *ngIf="authService.isLoggedStatus" (click)="toggleArrow()">{{name}}</button>
+          <a class="arrowicon"   *ngIf="authService.isLoggedStatus"><mat-icon > {{ isArrowDown ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon></a>
+
+      <mat-button-toggle-group id="category" color="accent" name="favoriteColor" class="menu">
+          <mat-menu #profile="matMenu" class="matMenu" >
+                <button mat-menu-item routerLink="/favorite"><mat-icon>favorite</mat-icon>Favorite</button>
+                <!-- <button mat-menu-item routerLink="../cart"><mat-icon>shopping_cart</mat-icon>Cart</button> -->
+                <button mat-menu-item routerLink="/display">Add Restaurant</button>
+                <button mat-menu-item (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon>exit_to_app</mat-icon>Logout</button>
+          </mat-menu>
+
+      </mat-button-toggle-group> 
+      </ul>
+    </div>
+  </div>
+  </div> 
+        
+    <!-- *ngIf="dish.length > 0; else emptyCart" -->
+    <div id="bg" *ngIf="dish.length > 0; else emptyCart" > 
+         <div class="overallpricecontainer" >
+             <p>Price Details</p>
+             <hr>
+             <div class="totalpricediv">
+                 <span>Price</span>
+                 <span>&#8377;&nbsp;{{ getTotalAmount() }}</span>
+             </div>
+             <div class="totalpricediv">
+                 <span>Discount</span>
+                 <span>
+                     <span class="Charges"></span><span>&#8377;{{getdisAmt()}}</span></span>
+             </div>
+             <div class="totalpricediv">
+                 <span>Delivery Charges</span>
+                 <span>
+                     <span class="Charges">&#8377;40</span><span> &nbsp;Free</span></span>
+             </div>
+             <hr>
+             <div class="total">
+             <span>Total Amount</span>
+             <span >&#8377;&nbsp;{{getDiscountAmt()}}</span>
+             </div>
+            
+                 <hr>
+              <div>
+               <button class="paybtn" mat-raised-button color="accent" (click)="paynow()">Buy Now</button>
+              </div> 
+             <div class="sentence">
+                 <p>You will save &#8377;{{getdisAmt()}} on this order</p>
+             </div>
+         </div>
+         <div class="cart">
+            <div class="table">
+                
+                <ul class="tableul">
+                    <li class="dishimg">Dish Image</li>
+                    <li class="tablel">Dish Name</li>
+                    <li class="price">Price</li>
+                    <li class="tablequta">Quantity</li>
+                    <li class="tablequt">Total Price</li>
+                </ul>
+            </div>
+            <div *ngFor="let d of dish " class="dishbox">
+                 <ul class="dishul">
+                     <li><img src="../../assets/Dish/{{d.dishName}}.jpg" width="150px " height="100px"></li>
+                     <li id="tableli">{{d.dishName}}</li>
+                     <li id="dishli">{{d.dishCost}}</li>
+                     <li class="dishQuan">
+                         <div class="qnt">
+                             <a (click)="decreaseQuantity(d)"><mat-icon class="add">remove</mat-icon></a>
+                             <div class="qntvalue">{{d.quantity}}</div>
+                             <a (click)="increaseQuantity(d)"><mat-icon class="add">add</mat-icon></a>
+                         </div>
+                     </li>
+                     <li id="dishCost">{{ totalCost(d.dishCost, d.quantity) }}</li>
+                     <button class="debtn"  (click)="deleteCart(d.dishName)"><mat-icon>delete</mat-icon></button>
+                 </ul>
+                   
+            </div>
+         </div>
+    </div>  
+
+    <ng-template #emptyCart>
+        <div class="empty" >
+          <img src="../../assets/empty.jpg" alt="error">
+          <p>Your Shopping Cart is empty</p>
+         
+          <button mat-raised-button class="emptybtn" routerLink="/home" color="warn"> Continue Shopping</button>
+        </div>
+      </ng-template>
+      <footer>
+        <hr>
+        <div>
+          <h1 class="footername">Bite Bliss</h1>
+        </div>
+        <div class="footerinfo">
+          <div>
+            <ul class="footerul">
+              <li>Privacy</li>
+              <li>Security</li>
+              <li>Terms</li>
+              <li>SiteMap</li>
+            </ul>
+          </div>
+              <div class="links">
+                <p>Social Links</p>
+                      <div class="footerlogo">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>       
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                      </div>
+              </div>
+        </div>
+        <hr class="footerhr">
+  
+        <div class="copyright">
+          <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © BiteBliss™ Ltd. All rights reserved.</p>
+        </div>
+      </footer>
+ 
+  
+  

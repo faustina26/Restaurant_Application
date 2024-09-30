@@ -1,0 +1,117 @@
+<div class="header">  
+  <div class="nav">
+    <div class="nav">
+      <!-- <marquee behavior="scroll" direction=""> -->
+       <a [routerLink]="'/home'">
+          <img src="../../assets/Logo/logo1-removebg.png" width="85px" height="75px">
+       </a>
+      <!-- </marquee> -->
+      <h1 class="brand">Bite Bliss</h1>
+    </div>
+    <div class="navoptions">
+      <ul>
+        <li><a [routerLink]="'/help'"><mat-icon>help</mat-icon>Help</a></li>
+
+        <div id="button">
+          <button mat-button *ngIf="authService.isLoggedStatus==false"><a [routerLink]="'/login'" ><mat-icon>account_circle</mat-icon>Login</a></button>
+         
+      </div>
+  
+        <button id="profile" mat-button [matMenuTriggerFor]="profile"
+          *ngIf="authService.isLoggedStatus" (click)="toggleArrow()">{{name}}</button>
+          <a class="arrowicon"   *ngIf="authService.isLoggedStatus"><mat-icon > {{ isArrowDown ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon></a>
+
+      <mat-button-toggle-group id="category" color="accent" name="favoriteColor" class="menu">
+          <mat-menu #profile="matMenu" class="matMenu" >
+                <button mat-menu-item [routerLink]="'/favorite'"><mat-icon>favorite</mat-icon>Favorite</button>
+                <!-- <button mat-menu-item [routerLink]="'/cart'"><mat-icon>shopping_cart</mat-icon>Cart</button> -->
+                <button mat-menu-item [routerLink]="'/display'">Add Restaurant</button>
+                <button mat-menu-item (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon>exit_to_app</mat-icon>Logout</button>
+          </mat-menu>
+
+      </mat-button-toggle-group> 
+      </ul>
+    </div>
+  </div>
+  </div>
+
+<div class="bg">
+    <div *ngIf="restaurant" class="container">
+
+      <div class="img">
+        <img class="restimg" src="../../assets/Restaurantimg/{{restaurant.restaurantName}}.jpg" alt="error" width="500px" height="300px">
+        <div>
+          <div id="restinfo">
+            <p id="name">{{restaurant.restaurantName}}</p>
+            <div class="chip"><span>{{restaurant.rating}}</span><i class="fa-solid fa-star" style="color:white;"></i>
+            </div>
+            <div class="rating">
+              <p class="ratingno">6,433</p>
+              <p class="ratinginfo"> Dining Rating</p>
+            </div>
+           </div>
+           <p class="cuisine">{{restaurant.cuisine}}&nbsp;,&nbsp;Beverages&nbsp;,&nbsp;Desserts</p>
+           <p class="location">{{restaurant.address?.area}}&nbsp;,&nbsp;{{restaurant.location}}&nbsp;,&nbsp;{{restaurant.address?.state}}&nbsp;,&nbsp;{{restaurant.address?.zipCode}}</p>
+           <div class="openings">
+            <p class="openingsinfo">Opens in 25 minutes &nbsp;</p>
+            <p> - 12 noon - 11.30 pm (Today)</p>
+            <mat-icon class="info " matTooltip="Mon - Sun" >info</mat-icon>
+           </div>
+            </div>          
+      </div>
+    
+      <div class="container">
+        <hr>
+        <h1 class="orderonline">Order Online</h1>
+        <hr>
+          <div class="dish" *ngFor="let dish of restaurant.dishList">
+            <img src="../../assets/Dish/{{dish.dishName}}.jpg" width="200px" height="180px">
+            <div class="dishinfo">
+              <p class="dishname">{{dish?.dishName}}</p>
+              <p class="dishtype">{{dish?.dishType}}</p>
+              <p class="dishcost">&#8377;&nbsp;{{dish?.dishCost}}<span class="offer"> 20%OFF</span></p>
+            </div>
+            <div class="like">
+              <button class="favorite-btn" [ngClass]="{'red': favoriteStatus[dish?.dishName ?? '']}" (click)="addToFav(dish)">
+                <i class="fa fa-heart"></i>
+              </button>
+                <button mat-raised-button matTooltip="Add To Cart" class="addbtn" (click)="addToCart(dish)"  color="accent">Add +</button>
+              </div>
+          
+          </div>
+
+      </div>
+     
+    </div>
+  </div>  
+    <footer>
+      <hr>
+      <div>
+        <h1 class="footername">Bite Bliss</h1>
+      </div>
+      <div class="footerinfo">
+        <div>
+          <ul class="footerul">
+            <li>Privacy</li>
+            <li>Security</li>
+            <li>Terms</li>
+            <li>SiteMap</li>
+          </ul>
+        </div>
+            <div class="links">
+              <p>Social Links</p>
+                    <div class="footerlogo">
+                      <i class="fa-brands fa-linkedin"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>       
+                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-brands fa-youtube"></i>
+                    </div>
+            </div>
+      </div>
+      <hr class="footerhr">
+
+      <div class="copyright">
+        <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © BiteBliss™ Ltd. All rights reserved.</p>
+      </div>
+    </footer>

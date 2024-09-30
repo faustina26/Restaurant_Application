@@ -1,0 +1,58 @@
+#searchContainer{
+    margin: 0%;
+    display: flex;
+    margin-left: 300px;
+    padding: 0px 10px ;
+    background-color: rgba(255, 255, 255, 0); 
+    height: 50px;
+    /* border-radius: 20px; */
+}
+.filter {
+     /* width: 200px; Set initial width of the select box */
+  }
+  
+  /* Increase width of dropdown when select is focused */
+  .filter option {
+    color: black;/* Set width of dropdown options */
+    font-size: medium;
+ 
+    width: 500px;
+  }
+mat-icon{
+    color: black;
+    background-color: white;
+    margin-left: -50px;
+}
+.ip input{
+ height: 0px;
+ 
+}
+.search{
+    display: flex;
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+
+}
+.ip{ 
+ 
+}
+input{
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+    border-color: none;
+}
+
+select{
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+}
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0); 
+    color: white;
+
+}
+
+.filter{
+   width: 150px;
+    height: 50px;}

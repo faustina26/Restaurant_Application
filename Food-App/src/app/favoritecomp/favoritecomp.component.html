@@ -1,0 +1,93 @@
+
+    <div class="header">  
+    <div class="nav">
+      <div class="nav">
+        <!-- <marquee behavior="scroll" direction=""> -->
+         <a [routerLink]="'/home'">
+            <img src="../../assets/Logo/logo1-removebg.png" width="85px" height="75px">
+         </a>
+        <!-- </marquee> -->
+        <h1 class="brand">Bite Bliss</h1>
+      </div>
+      <div class="navoptions">
+        <ul>
+          <li><a routerLink="/help"><mat-icon>help</mat-icon>Help</a></li>
+  
+          <div id="button">
+            <button mat-button *ngIf="authService.isLoggedStatus==false"><a routerLink="../login" ><mat-icon>account_circle</mat-icon>Login</a></button>
+           
+        </div>
+    
+          <button id="profile" mat-button [matMenuTriggerFor]="profile"
+            *ngIf="authService.isLoggedStatus" (click)="toggleArrow()">{{name}}</button>
+            <a class="arrowicon"   *ngIf="authService.isLoggedStatus"><mat-icon > {{ isArrowDown ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon></a>
+  
+        <mat-button-toggle-group id="category" color="accent" name="favoriteColor" class="menu">
+            <mat-menu #profile="matMenu" class="matMenu" >
+                  <button mat-menu-item routerLink="/favorite"><mat-icon>favorite</mat-icon>Favorite</button>
+                  <!-- <button mat-menu-item routerLink="../cart"><mat-icon>shopping_cart</mat-icon>Cart</button> -->
+                  <button mat-menu-item routerLink="/display">Add Restaurant</button>
+                  <button mat-menu-item (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon>exit_to_app</mat-icon>Logout</button>
+            </mat-menu>
+  
+        </mat-button-toggle-group> 
+        </ul>
+      </div>
+    </div>
+    </div> 
+    <!-- *ngIf="favDish.length > 0; else emptyCart" -->
+<div class="bg" *ngIf="favDish.length > 0; else emptyCart" >
+    <div *ngFor="let fav of favDish" class="matcard">
+        <button class="heartbtn" (click)="delete(fav.dishName)"> <i class="fa fa-heart"></i></button>
+    <img src="../../assets/Dish/{{fav.dishName}}.jpg" alt="" >
+    
+   
+    <div class="details">
+        <p class="name">{{fav.dishName}}</p>
+        <p class="type">({{fav.dishType}})</p>
+        <p class="cost">Price:&nbsp;&#8377;&nbsp;{{fav.dishCost}}</p>
+    </div>
+    <button mat-raised-button matTooltip="Add To Cart" class="addbtn" (click)="addToCart(fav)"  color="accent">Add +</button>
+    </div>
+</div>
+<ng-template #emptyCart>
+    <div class="empty" >
+        <img src="../../assets/Logo/fav1.png" width="550"  alt="error">
+        <!-- <p>Your Shopping Cart is empty</p> -->
+       <div>
+        <button mat-raised-button class="emptybtn" routerLink="/home" color="warn"> Continue Shopping</button>
+       </div>
+        
+      </div>
+  </ng-template>
+  <footer>
+    <hr>
+    <div>
+      <h1 class="footername">Bite Bliss</h1>
+    </div>
+    <div class="footerinfo">
+      <div>
+        <ul class="footerul">
+          <li>Privacy</li>
+          <li>Security</li>
+          <li>Terms</li>
+          <li>SiteMap</li>
+        </ul>
+      </div>
+          <div class="links">
+            <p>Social Links</p>
+                  <div class="footerlogo">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>       
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                  </div>
+          </div>
+    </div>
+    <hr class="footerhr">
+
+    <div class="copyright">
+      <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © BiteBliss™ Ltd. All rights reserved.</p>
+    </div>
+  </footer>

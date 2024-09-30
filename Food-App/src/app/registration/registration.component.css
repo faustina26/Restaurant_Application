@@ -1,0 +1,115 @@
+.bg{
+    background-image: url(../../assets/sign1.jpg);
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+  padding-bottom: 50px;
+}
+
+.brand{
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 3px;
+     font-weight: 400;
+  margin-top: -10px;
+     padding-top: 20px;
+     color: white;
+   
+}
+.registration_form{
+    width: 500px;
+    margin-left: 400px;
+ 
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+ background-color: white;
+ padding: 10px 20px;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px 2px black;
+ 
+}
+h2 {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-style:normal; 
+    font-size:25px;
+    letter-spacing: 2px;
+}
+#sub{
+    margin-top: 10px;
+    margin-left: 200px;
+    background-color: green;
+}
+input{
+    width: 220px;
+}
+.name{
+    margin-left: 3px;
+}
+.name > input{
+   
+    width: 450px;
+}
+.email{
+    margin-left: 3px;
+    margin-top: 5px;
+}
+.email> input{
+   
+    width: 450px;
+}
+.nameemail{
+    display: flex;
+  justify-content: space-around;
+  margin: 5px 0px;
+}
+.phone{
+    margin-left: 5px;
+}
+#phoneNumber{
+    width: 450px;
+}
+
+.pincode{
+    margin-left: 5px;
+}
+mat-error{
+    color: red;
+    font-size: x-small;
+ 
+}
+label{
+    margin-top: -10px;
+margin-bottom: -10px;
+}
+/* ----------------------
+ */
+ .header{
+    background-color: rgba(255, 255, 255, 0); 
+color: white;
+margin-top: -5px;
+height: 70px;
+}
+
+img{
+    margin-left: 10px;
+    margin-top: -10px;
+    padding-bottom: 10px;
+   
+}
+
+.nav{
+    display: flex;
+   
+   height: 80px;
+   padding: 10px;
+}
+mat-icon{
+    color: black;
+    /* font-size: 10px; */
+ padding-right:27px ;
+color: orange;
+
+}

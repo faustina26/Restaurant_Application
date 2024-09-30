@@ -1,0 +1,90 @@
+
+<div class="homecomp">
+  <div class="header">  
+    <div class="nav">
+      <div>
+        <!-- <marquee behavior="scroll" direction=""> -->
+          <img src="../../assets/Logo/logo1-removebg.png" width="85px" height="75px">
+        <!-- </marquee> -->
+        
+      </div>
+      <div class="navoptions">
+        <ul>
+          <li><a routerLink="/help"><mat-icon>help</mat-icon>Help</a></li>
+        
+          <!-- <li  (click)="logout()" *ngIf="authService.isLoggedStatus==true"><a href="/"><mat-icon >exit_to_app</mat-icon>Logout</a></li>
+          <li *ngIf="authService.isLoggedStatus==true">{{name}}</li> -->
+          <!-- <li *ngIf="authService.isLoggedStatus==false"><a routerLink="../login" ><mat-icon>account_circle</mat-icon>Login</a></li> -->
+         
+
+          <div id="button">
+            <button mat-button *ngIf="authService.isLoggedStatus==false"><a routerLink="../login" ><mat-icon>account_circle</mat-icon>Login</a></button>
+           
+        </div>
+    
+          <button id="profile" mat-button [matMenuTriggerFor]="profile"
+            *ngIf="authService.isLoggedStatus" (click)="toggleArrow()">{{name}}</button>
+            <a class="arrowicon"   *ngIf="authService.isLoggedStatus"><mat-icon > {{ isArrowDown ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon></a>
+
+        <mat-button-toggle-group id="category" color="accent" name="favoriteColor">
+            <mat-menu #profile="matMenu" class="matMenu">
+                <!-- <mat-button-toggle class="toggle" routerLink="/favorite"><mat-icon>favorite</mat-icon>Favorite</mat-button-toggle>
+                <mat-button-toggle class="toggle"   routerLink="../cart"><mat-icon>shopping_cart</mat-icon>Cart</mat-button-toggle>
+                <mat-button-toggle class="toggle" (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon></mat-icon>Logout</mat-button-toggle> -->
+                  <!-- <a mat-menu-item routerLink="/favorite"><mat-icon>favorite</mat-icon>Favorite</a> -->
+                  <button mat-menu-item routerLink="../favorite"><mat-icon>favorite</mat-icon>Favorite</button>
+                  <!-- <button mat-menu-item routerLink="../cart"><mat-icon>shopping_cart</mat-icon>Cart</button> -->
+                  <button mat-menu-item routerLink="/display">Add Restaurant</button>
+                  <button mat-menu-item (click)="logout()" *ngIf="authService.isLoggedStatus"><mat-icon>exit_to_app</mat-icon>Logout</button>
+            </mat-menu>
+
+        </mat-button-toggle-group> 
+        </ul>
+      </div>
+    </div>
+    </div> 
+    <!-- header -->
+  <div class="bg"> 
+      <div class="titlediv">
+          <h1 class="name">Bite Bliss</h1>
+          <p class="slogan">Experience Bliss in Every Bite</p>
+      </div>
+      <div class="searchcomponent">
+            <app-search (locationSelected)="onSelectLocation($event)" (searchNote)="onSearchNote($event)" ></app-search>
+      </div>
+
+    </div>
+      <app-items *ngFor="let p of filteredRestaurants" [items]=p></app-items>
+    <footer>
+      <hr>
+      <div>
+        <h1 class="footername">Bite Bliss</h1>
+      </div>
+      <div class="footerinfo">
+        <div>
+          <ul class="footerul">
+            <li>Privacy</li>
+            <li>Security</li>
+            <li>Terms</li>
+            <li>SiteMap</li>
+          </ul>
+        </div>
+            <div class="links">
+              <p>Social Links</p>
+                    <div class="footerlogo">
+                      <i class="fa-brands fa-linkedin"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>       
+                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-brands fa-youtube"></i>
+                    </div>
+            </div>
+      </div>
+      <hr class="footerhr">
+
+      <div class="copyright">
+        <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © BiteBliss™ Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+</div>
+

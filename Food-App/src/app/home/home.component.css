@@ -1,0 +1,157 @@
+.searchcomponent{
+ margin-bottom: 50px;
+}
+
+
+img{
+    margin-left: 20px;
+    cursor: pointer;
+    
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+   
+}
+mat-icon{
+    color: black;
+    /* font-size: 10px; */
+ padding-right:27px ;
+color: orange;
+
+}
+.titlediv{
+ 
+    line-height: 50px;
+    text-align: center;
+}
+
+.slogan{
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    font-size:30px;
+
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+   margin-top: 10px;
+   display: flex;
+   color: white;
+    
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    
+    
+}
+#button{
+    padding: 10px 15px;}
+    
+#button:focus {
+    border: 0px;
+    outline: none; /* Remove the default focus outline */
+}
+#profile{
+    color: white;
+    font-family: "Madimi One", sans-serif;
+    font-weight: lighter;
+    padding:30px 30px 30px 30px;
+
+    font-size:20px;
+
+}
+.arrowicon{
+   margin-top: 17px;
+   margin-left: -23px;
+}
+
+/* ---------------------------------------------- */
+ul li{
+    padding: 10px 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.homecomp{
+   color: white;
+    background-image: url(../../assets/Logo/background.jpg);
+    background-repeat: no-repeat;
+   
+    background-attachment: fixed;
+
+    background-size:100% 100%;
+}
+.titlediv{
+ 
+    line-height: 50px;
+    text-align: center;
+}
+.name{
+    /* font-family: "Pacifico", cursive;
+           font-weight: 400;
+           font-style: normal; */
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 3px;
+     font-weight: 400;
+     padding-top: 20px;
+     font-size: 50px;
+     font-style: normal;
+     margin-top: 0%;
+   }
+
+.slogan{
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    font-size:30px;
+
+}
+
+
+/* --------------------------------------- */
+footer{
+    background-color: black;
+    padding-left: 40px;
+    color: white;
+}
+.footername{
+    font-family: "Madimi One", sans-serif;
+    letter-spacing: 2px;
+}
+.footerul{
+    padding:0%;
+    margin: 0%;
+}
+.footerul li{
+    padding: 10px 20px 10px 0px;
+    font-size: medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.footerinfo{
+    display: flex;
+}
+.links{
+     margin-left: 600px;
+}
+.links p{
+    /* padding-top: 5px; */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.footerlogo i{
+    font-size: small;
+ padding: 0px 5px;
+}
+.footerhr{
+    background-color: white;
+    margin-left:-10px ;
+    width: 1200px;
+}
+.copyright p{
+    width: 1200px;
+    font-size: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}

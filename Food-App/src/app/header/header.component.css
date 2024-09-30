@@ -1,0 +1,54 @@
+.header{
+    background-image: url(../../assets/Logo/background.jpg); 
+    background-repeat: no-repeat;
+color: white;
+height: 60px;
+}
+
+img{
+    margin-left: 20px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+   
+}
+mat-icon{
+    color: black;
+    /* font-size: 10px; */
+ padding-right:27px ;
+color: orange;
+
+}
+.titlediv{
+ 
+    line-height: 50px;
+    text-align: center;
+}
+
+.slogan{
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    font-size:30px;
+
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+   margin-top: 10px;
+   display: flex;
+   color: white;
+    
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    
+    
+}
+ul li{
+    padding: 10px 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* --------------------------------------------------- */

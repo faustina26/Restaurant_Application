@@ -1,0 +1,66 @@
+<!-- <div class="bg">
+<form (ngSubmit)="login()">
+  <h1>ADMIN LOGIN</h1>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username"  required #usernameInput="ngModel">
+      <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)" class="error">
+        <div *ngIf="usernameInput.errors?.['required']">
+          Username is required.
+        </div>
+        <div *ngIf="!username.match(/^\D/)">
+          Username should not start with a number.
+        </div>
+
+
+      </div>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required #passwordInput="ngModel" pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+      <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+        <div *ngIf="passwordInput.errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="passwordInput?.errors?.['pattern']">
+          Enter a valid Password
+        </div>
+
+      </div>
+    
+    
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>  -->
+<div class="bg">
+  <form (ngSubmit)="login()">
+    <h1>ADMIN LOGIN</h1>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" pattern="[^0-9].*" required #usernameInput="ngModel">
+      <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)" class="error">
+        <div *ngIf="usernameInput.errors?.['required']">
+          Username is required.
+        </div>
+        <div *ngIf="usernameInput.errors?.['pattern']">
+          Username should not start with a number.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required #passwordInput="ngModel" pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+      <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+        <div *ngIf="passwordInput.errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="passwordInput.errors?.['pattern']">
+          Enter a valid Password (minimum 8 characters, at least one uppercase letter, one lowercase letter, one digit, and one special character).
+        </div>
+
+      </div>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
